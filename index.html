@@ -1,28 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <link rel="stylesheet" href="assets/css/welcome.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LicitFlow - Simplificando a Gestão de Licitações</title>
-    <!-- Aqui será reservado um espaço para o favicon -->
-    <link rel="icon" type="image/png" href="assets/img/Logomarca.ico" />
-  </head>
-  <body>
-    <div class="welcome-container">
-      <img src="assets/img/logo_start.svg" alt="Logo do LicitFlow" />
-      <h1>Bem-vindo ao LicitFlow</h1>
-      <p>Simplificando a Gestão de Licitações em Empresas</p>
-      <p>
-        O LicitFlow é uma plataforma inovadora projetada para otimizar a gestão
+<html lang="en">
+<head>
+ <title>Boas-vindas ao Meu Site</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <style>
+    body {
+      background-color: #04306B;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .navbar-brand {
+      font-size: 2rem;
+    }
+    .welcome-container {
+      padding-top: 50px;
+      text-align: center;
+      min-height: calc(100vh - 100px); /* Altura da tela - altura da barra de navegação (50px) e altura do rodapé (50px) */
+    }
+    .welcome-container h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #F39005;
+    }
+    .welcome-container p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .btn-start {
+      background-color: #F39005;
+      border-color: #F39005;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border-radius: 5px;
+    }
+    .btn-start:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    h3, p {
+      color: white;
+    }
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    footer p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .character-img {
+      position: fixed;
+      bottom: 100px;
+      right: 0;
+      height: auto;
+      min-width: 300px;
+      width: 35%; /* Defina o tamanho desejado em porcentagem ou vw */
+      z-index: 1000; /* Para garantir que a imagem esteja acima de todos os outros elementos */
+    }
+ </style>
+</head>
+<body class="d-flex flex-column">
+
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Licit Flow</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+ </div>
+</nav>
+
+<main class="container-fluid text-center welcome-container">
+ <div class="row content">
+    <div class="col-sm-12 text-left">
+      <h1>Bem-vindo ao Melhor Sistema de Gerenciamento de Licitações</h1>
+      <p>O LicitFlow é uma plataforma inovadora projetada para otimizar a gestão
         de licitações em empresas. Com mecanismos flexíveis de padronização,
         nossa plataforma oferece uma experiência intuitiva e acessível,
         permitindo que diferentes setores personalizem e recebam suas
-        solicitações de demandas de maneira eficiente.
-      </p>
-      <a href="login.php" class="btn-start"
-        >Comece a Simplificar suas Licitações Agora!</a
-      >
+        solicitações de demandas de maneira eficiente.</p>
+      <hr>
+      <h3>Comece Agora</h3>
+      <a href="login.php" class="btn btn-start">Explore o Site</a>
     </div>
-  </body>
+ </div>
+</main>
+
+<footer class="container-fluid text-center py-3">
+ <p>© 2024 Licit Flow. Todos os direitos reservados. Desenvolvido por Ademar Castro, Bruna Pires e Sana.</p>
+</footer>
+
+<!-- Imagem do personagem -->
+<img src="assets/img/menino.png" class="character-img" alt="Personagem">
+
+<!-- Scripts do Bootstrap e outros scripts necessários -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    resizeWelcomeContainer();
+
+    // Redimensionar welcome-container quando a janela é redimensionada
+    $(window).resize(function(){
+      resizeWelcomeContainer();
+    });
+  });
+
+  function resizeWelcomeContainer() {
+    var navHeight = $("nav").outerHeight();
+    var footerHeight = $("footer").outerHeight();
+    var windowHeight = $(window).height();
+    var welcomeContainerHeight = windowHeight - navHeight - footerHeight;
+    $(".welcome-container").css("min-height", welcomeContainerHeight);
+  }
+</script>
+
+</body>
 </html>
