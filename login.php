@@ -18,8 +18,6 @@
     <main class="main-container-login">
       <div id="bola-1"></div>
 
-      
-
       <form id="form-login" method="post" action="scriptlogin.php">
         <input 
           type="text" 
@@ -30,6 +28,24 @@
           name="senha"
           type="password" 
           placeholder="Ensirar a senha">
+
+        <?php
+            // Verificando se a sessão nao_autenticado existe
+            if (isset($_SESSION['nao_autenticado'])): 
+        ?>
+
+        <!-- Mensagem de erro -->
+
+        <div class="notification is-danger" align="center">
+            <p style="color: red;">Erro: Usuário ou senha inválidos.</p>
+        </div>
+
+        <?php
+            endif; // Fechando o IF
+            
+            // Destruindo a sessão com UNSET
+            unset($_SESSION['nao_autenticado']);
+        ?>
 
         <div class="container-entrar">
           <div class="navegacao">
