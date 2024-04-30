@@ -6,7 +6,7 @@
 
     if (!isset($_SESSION['usuario'])) {
         // Redirecionar para a página de login se o usuário não estiver logado
-        header('Location: login.php');
+        header('Location: index.php');
         exit();
     }
 
@@ -79,12 +79,12 @@
                 header('Location: sem-acesso.php');
                 break;
             default:
-                header('Location: login.php');
+                header('Location: index.php');
                 break;
         }
     } else {
         // Redirecionar para a página de login se o usuário não for encontrado
-        header('Location: login.php');
+        header('Location: index.php');
     }
     exit();
 ?>

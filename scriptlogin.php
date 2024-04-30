@@ -8,7 +8,7 @@
 
     // 2 - Verificar se os campos estão vazios
     if (empty($_POST['email']) || empty($_POST['senha'])) { // empty é uma função que verifica se o campo está vazio
-        header("Location:login.php"); // Redirecionando para a página de login
+        header("Location:index.php"); // Redirecionando para a página de login
         exit();
     }
 
@@ -66,7 +66,7 @@
 
     }else{
         $_SESSION['nao_autenticado'] = true;
-        header('Location: login.php');
+        header('Location: index.php');
         exit();
     }
 

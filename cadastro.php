@@ -97,7 +97,7 @@
             <?php endif; ?>
 
             <div class="container-entrar">
-                <a href="login.php">Já possui conta? <strong>Faça login</strong></a>
+                <a href="index.php">Já possui conta? <strong>Faça login</strong></a>
                 <button type="submit">Cadastrar</button>
             </div>
         </form>

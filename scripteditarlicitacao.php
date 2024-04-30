@@ -75,14 +75,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header('Location: sem-acesso.php');
                 break;
             default:
-                header('Location: login.php');
+                header('Location: index.php');
                 break;
         }
     } else {
         // Após uma falha na edição da licitação
         $_SESSION['licitacao_nao_editada'] = true;
         // Redirecionar para a página de login se o usuário não for encontrado
-        header('Location: login.php');
+        header('Location: index.php');
     }
     exit();
 }
